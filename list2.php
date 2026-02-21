@@ -77,29 +77,25 @@ HTML;
     <script>
 
     function chechpassword(){
-        var departmentFromPHP = '<?php echo $departmentDetails['psk']; ?>';
-        var link = '<?php echo $departmentDetails['lcount'][0]; ?>';
-        var psk = document.getElementById("passwordInput").value
+        <?php if(isset($departmentDetails) && $departmentDetails): ?>
+        var departmentFromPHP = '<?php echo isset($departmentDetails['psk']) ? $departmentDetails['psk'] : ''; ?>';
+        var link = '<?php echo isset($departmentDetails['lcount'][0]) ? $departmentDetails['lcount'][0] : ''; ?>';
+        var psk = document.getElementById("passwordInput").value;
         if(psk == departmentFromPHP){
-            window.location.href = link
+            window.location.href = link;
         }else{
-            alert("wrong password")
+            alert("wrong password");
         }
+        <?php else: ?>
+        alert("Department details not available");
+        <?php endif; ?>
     }
     function closepassword(){
-        document.getElementById("password").style.display = "none"
+        document.getElementById("password").style.display = "none";
     }
-     function ClickEvent() {
-         <?php
-            // Get the 'department' parameter from the URL (query string)
-            // Note: You should sanitize and validate the input to prevent security issues.
-            // For this example, we are simply using htmlspecialchars to escape the value.
-            $dp = isset($_GET['department']) ? htmlspecialchars($_GET['department']) : '';
-            ?>
-            
-            var departmentFromPHP = '<?php echo $data; ?>';
-            document.getElementById("password").style.display = "block"
-        }
+    function ClickEvent() {
+        document.getElementById("password").style.display = "block";
+    }
 </script>
 </body>
 </html>

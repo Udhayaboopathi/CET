@@ -15,7 +15,7 @@
     // Convert JSON to PHP array
     $data = json_decode($jsonData, true);
     echo "<div class='container'>";
-    echo "<h1>Ph.D. Common Entrance Test (December 2025 Mock Session) : 01-08-2025</h1>";
+    echo "<h1>Ph.D. Common Entrance Test (December 2025 Session) : 01-03-2026</h1>";
     echo "<div class='box-container'>";
     // Function to display data in a box
     function displayDataInBox($department,$current) {
