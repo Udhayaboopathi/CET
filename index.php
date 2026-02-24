@@ -435,7 +435,7 @@
     $sessions = groupBySession($allDepartments);
     
     echo '<div class="department-section">';
-    echo '<h2 class="section-title">udhaya Ph.D. Common Entrance Test - December 2025</h2>';
+    echo '<h2 class="section-title">Ph.D. Common Entrance Test - December 2025</h2>';
     echo '<div class="server-time-display"><span class="time-label">Current Server Time:</span><span id="currentServerTime"></span></div>';
     
     foreach ($sessions as $sessionNum => $sessionData) {
