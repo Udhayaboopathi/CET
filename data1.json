@@ -1,0 +1,164 @@
+{
+  "arts": {
+    "name": "Ph.D. Common Entrance Test - December 2025 | Time: 10:00 to 11:30 am",
+    "email": "phdcetarts@gmail.com",
+    "value": [
+      {
+        "val": "Physics",
+        "lcount": ["https://forms.gle/PhysicsExamLink2025"],
+        "link": "/exams/Physics/arts",
+        "psk": "PHY2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Tamil",
+        "lcount": ["https://forms.gle/TamilExamLink2025"],
+        "link": "/exams/Tamil/arts",
+        "psk": "TAM2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Economics",
+        "lcount": ["https://forms.gle/EconomicsExamLink2025"],
+        "link": "/exams/Economics/arts",
+        "psk": "ECO2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "EVS",
+        "lcount": ["https://forms.gle/EVSExamLink2025"],
+        "link": "/exams/EVS/arts",
+        "psk": "EVS2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Biotech",
+        "lcount": ["https://forms.gle/BiotechExamLink2025"],
+        "link": "/exams/Biotech/arts",
+        "psk": "BIO2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Geology",
+        "lcount": ["https://forms.gle/GeologyExamLink2025"],
+        "link": "/exams/Geology/arts",
+        "psk": "GEO2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Sociology",
+        "lcount": ["https://forms.gle/SociologyExamLink2025"],
+        "link": "/exams/Sociology/arts",
+        "psk": "SOC2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Library and Information Science",
+        "lcount": ["https://forms.gle/LISExamLink2025"],
+        "link": "/exams/Library-and-Information-Science/arts",
+        "psk": "LIS2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Zoology",
+        "lcount": ["https://forms.gle/ZoologyExamLink2025"],
+        "link": "/exams/Zoology/arts",
+        "psk": "ZOO2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "History",
+        "lcount": ["https://forms.gle/HistoryExamLink2025"],
+        "link": "/exams/History/arts",
+        "psk": "HIS2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Management",
+        "lcount": ["https://forms.gle/ManagementExamLink2025"],
+        "link": "/exams/Management/arts",
+        "psk": "MGT2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Nutrition Dietics",
+        "lcount": ["https://forms.gle/NutritionExamLink2025"],
+        "link": "/exams/Nutrition-Dietics/arts",
+        "psk": "ND2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Textile & Apparel",
+        "lcount": ["https://forms.gle/TextileExamLink2025"],
+        "link": "/exams/Textile-Apparel/arts",
+        "psk": "TA2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      }
+    ]
+  }
+}

@@ -433,7 +433,7 @@
 
     <?php
     // Read the JSON data from the file
-    $jsonData = file_get_contents('data.json');
+    $jsonData = file_get_contents('data2.json');
     // Convert JSON to PHP array
     $data = json_decode($jsonData, true);
 
