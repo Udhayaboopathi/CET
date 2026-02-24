@@ -1,485 +1,78 @@
 {
-  "list1": {
-    "name": "Science Departments - List 1",
-    "email": "phdcetscience@gmail.com",
+  "arts": {
+    "name": "Ph.D. Common Entrance Test - December 2025 | Time: 10:00 to 11:30 am",
+    "email": "phdcetarts@gmail.com",
     "value": [
       {
-        "val": "Biochemistry",
-        "lcount": [
-          "https://forms.gle/BSeoNy9QKPVKXpwC8"
-        ],
-        "link": "/exams/Biochemistry/list1",
-        "psk": "BIO2025",
+        "val": "Mathematics",
+        "lcount": ["https://forms.gle/MathExamLink2025"],
+        "link": "/exams/Mathematics/arts",
+        "psk": "MATH2025",
         "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Biotechnology",
-        "lcount": [
-          "https://forms.gle/Mujx4GheUnMjp5jX7"
-        ],
-        "link": "/exams/Biotechnology/list1",
-        "psk": "BIT2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Botany",
-        "lcount": [
-          "https://forms.gle/cQBfhteEuDtcg5An9"
-        ],
-        "link": "/exams/Botany/list1",
-        "psk": "BOT2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Chemistry",
-        "lcount": [
-          "https://forms.gle/uZi8UUTrYfVHeHnD7"
-        ],
-        "link": "/exams/Chemistry/list1",
-        "psk": "CHE2025",
-        "time": {
-          "from": "10:0",
-          "to": "11:0",
+          "from": "10:00",
+          "to": "11:30",
           "session": "1",
           "noon": "am"
         }
       },
       {
-        "val": "Computer Science",
-        "lcount": [
-          "https://forms.gle/1FM4pDkyQ8YxfM5W9"
-        ],
-        "link": "/exams/Computer Science/list1",
-        "psk": "CSC2025",
+        "val": "English",
+        "lcount": ["https://forms.gle/HpBWGwW86V1AteL39"],
+        "link": "/exams/English/arts",
+        "psk": "ENG2025",
         "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
+          "from": "10:00",
+          "to": "11:30",
+          "session": "1",
+          "noon": "am"
         }
       },
-	 
-
-
-{
-        "val": "Energy Science",
-        "lcount": [
-          "https://forms.gle/S4ph28QUFo7RHgZj7"
-        ],
-        "link": "/exams/Energy Science/list1",
-        "psk": "ENS2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-
-
-
-{
-     
-
-
-
-        "val": "Energy Technology",
-        "lcount": [
-          "https://forms.gle/QeAywu2kzf1wG9dC9"
-        ],
-        "link": "/exams/Energy Technology/list1",
-        "psk": "ENT2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-
-	  
-      {
-        "val": "Environmental Science",
-        "lcount": [
-          "https://forms.gle/pLvxjf8vk1b2FwfRA"
-        ],
-        "link": "/exams/Environmental Science/list1",
-        "psk": "EVS2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-     
       {
         "val": "Food Science and Nutrition",
-        "lcount": [
-          "https://forms.gle/YuDomG85ChtxqAjn6"
-        ],
-        "link": "/exams/Food Science and Nutrition/list1",
+        "lcount": ["https://forms.gle/FSNExamLink2025"],
+        "link": "/exams/FSN/arts",
         "psk": "FSN2025",
         "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-      
-      
-      {
-        "val": "Geology",
-        "lcount": [
-          "https://forms.gle/Zqhk4oiK4MP9YkDh9"
-        ],
-        "link": "/exams/Geology/list1",
-        "psk": "GEO2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      }
-      
-      
-         
-         
-               
-    ]
-  },
-  "list2": {
-    "name": "Science Departments - List 2",
-    "email": "phdcetscience2@gmail.com",
-    "value": [
-     
-     
-     
-    {
-        "val": "Library and Information Science",
-        "lcount": [
-          "https://forms.gle/joKa2MuftdtmTu8Y7"
-        ],
-        "link": "/exams/Library and Information Science/list1",
-        "psk": "LIS2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-         },
-      
-      
-         
-         
-         
-         
-      {
-        "val": "Mathematics",
-        "lcount": [
-          "https://forms.gle/AXxYrDCZ7FRhm49c8"
-        ],
-        "link": "/exams/Mathematics/list2",
-        "psk": "MAT2025",
-        "time": {
-          "from": "11:30",
-          "to": "12:30",
-          "session": "2",
+          "from": "10:00",
+          "to": "11:30",
+          "session": "1",
           "noon": "am"
         }
       },
       {
         "val": "Microbiology",
-        "lcount": [
-          "https://forms.gle/X3XLBCz7mXowmDSN8"
-        ],
-        "link": "/exams/Microbiology/list2",
-        "psk": "MIC2025",
+        "lcount": ["https://forms.gle/MicroExamLink2025"],
+        "link": "/exams/Microbiology/arts",
+        "psk": "MICRO2025",
         "time": {
-          "from": "11:30",
-          "to": "12:30",
-          "session": "2",
-          "noon": "am"
-        }
-      },
-      {
-        "val": "Nutrition and Dietetics",
-        "lcount": [
-          "https://forms.gle/j7pRPvbd9fiFKeuq7"
-        ],
-        "link": "/exams/Nutrition and Dietetics/list2",
-        "psk": "NAD2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-	  
-	  {
-        "val": "Physical Education",
-        "lcount": [
-          "https://forms.gle/FekBwuCx5D4FSe6J8"
-        ],
-        "link": "/exams/Physical Education/list2",
-        "psk": "PHE2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-	  
-	  
-      {
-        "val": "Physics",
-        "lcount": [
-          "https://forms.gle/LJJS7NeGUNjgm2SK9"
-        ],
-        "link": "/exams/Physics/list2",
-        "psk": "PHY2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-
-
-
-
-      {
-        "val": "Psychology",
-        "lcount": [
-          "https://forms.gle/FyvHG5VuNYFRctJF7"
-        ],
-        "link": "/exams/Psychology/list2",
-        "psk": "PSY2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },  
-
-      
-	  
-	  
-    
-	  
-      {
-        "val": "Statistics",
-        "lcount": [
-          "https://forms.gle/wphFmEBt9sKnY3B19"
-        ],
-        "link": "/exams/Statistics/list2",
-        "psk": "STA2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-	  
-	  
-	  {
-        "val": "Textiles and Apparel Design",
-        "lcount": [
-          "https://forms.gle/V6nESnEPkPVRN6W97"
-        ],
-        "link": "/exams/Textiles and Apparel Design/list2",
-        "psk": "TAD2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-     
-      {
-        "val": "Zoology",
-        "lcount": [
-          "https://forms.gle/DimXLv1EMMYwxT6i8"
-        ],
-        "link": "/exams/Zoology/list2",
-        "psk": "ZOO2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      }
-    ]
-  },
-  "arts": {
-    "name": "Arts Departments",
-    "email": "phdcetarts@gmail.com",
-    "value": [
-      {
-        "val": "Commerce",
-        "lcount": [
-          "https://forms.gle/jRrstdoDqZe6NgxSA"
-        ],
-        "link": "/exams/Commerce/arts",
-        "psk": "COM2025",
-        "time": {
-          "from": "11:30",
-          "to": "12:30",
-          "session": "2",
-          "noon": "am"
-        }
-      },
-      {
-        "val": "Economics",
-        "lcount": [
-          "https://forms.gle/HYwoMZ1hXQXS3UzP7"
-        ],
-        "link": "/exams/Economics/arts",
-        "psk": "ECO2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Education",
-        "lcount": [
-          "https://forms.gle/zbVGYwwoeESnKKUP9"
-        ],
-        "link": "/exams/Education/arts",
-        "psk": "EDU2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "English",
-        "lcount": [
-          "https://forms.gle/HpBWGwW86V1AteL39"
-        ],
-        "link": "/exams/English/arts",
-        "psk": "ENG2025",
-        "time": {
-          "from": "10:0",
-          "to": "11:0",
+          "from": "10:00",
+          "to": "11:30",
           "session": "1",
           "noon": "am"
         }
       },
       {
-        "val": "History",
-        "lcount": [
-          "https://forms.gle/5FsfbVGQRd8Bwr5i9"
-        ],
-        "link": "/exams/History/arts",
-        "psk": "HIS2025",
-        "time": {
-          "from": "11:30",
-          "to": "12:30",
-          "session": "2",
-          "noon": "am"
-        }
-      },
-      {
         "val": "Journalism and Mass Communication",
-        "lcount": [
-          "https://forms.gle/Xu3xLZR1RHEfca797"
-        ],
+        "lcount": ["https://forms.gle/Xu3xLZR1RHEfca797"],
         "link": "/exams/Journalism and Mass Communication/arts",
-        "psk": "JMS2025",
+        "psk": "JMC2025",
         "time": {
-          "from": "11:30",
-          "to": "12:30",
-          "session": "2",
+          "from": "10:00",
+          "to": "11:30",
+          "session": "1",
           "noon": "am"
         }
       },
-     
       {
-        "val": "Management Studies",
-        "lcount": [
-          "https://forms.gle/qNR5vx9bvSzmNMyC8"
-        ],
-        "link": "/exams/Management Studies/arts",
-        "psk": "MBA2025",
+        "val": "Botany",
+        "lcount": ["https://forms.gle/BotanyExamLink2025"],
+        "link": "/exams/Botany/arts",
+        "psk": "BOT2025",
         "time": {
-          "from": "11:30",
-          "to": "12:30",
-          "session": "2",
+          "from": "10:00",
+          "to": "11:30",
+          "session": "1",
           "noon": "am"
-        }
-      },
-       {
-        "val": "Political Science",
-        "lcount": [
-          "https://forms.gle/qFBNt9SFrDYUnP2u9"
-        ],
-        "link": "/exams/Political Science/list2",
-        "psk": "POL2025",
-        "time": {
-          "from": "2:0",
-          "to": "3:0",
-          "session": "3",
-          "noon": "pm"
-        }
-      },
-
-      {
-        "val": "Sociology",
-        "lcount": [
-          "https://forms.gle/26Q7yGdusQW1vRg29"
-        ],
-        "link": "/exams/Sociology/arts",
-        "psk": "SOC2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Tamil",
-        "lcount": [
-          "https://forms.gle/Y5cm3baqtym5UPok8"
-        ],
-        "link": "/exams/Tamil/arts",
-        "psk": "TAM2025",
-        "time": {
-          "from": "3:15",
-          "to": "4:15",
-          "session": "4",
-          "noon": "pm"
         }
       }
     ]
