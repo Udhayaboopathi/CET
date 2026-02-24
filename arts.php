@@ -23,6 +23,7 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
+            min-height: 100vh;
         }
 
         /* Department Card */
