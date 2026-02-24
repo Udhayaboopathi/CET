@@ -92,6 +92,63 @@
             transform: translateY(0);
         }
 
+        .exam-button.disabled {
+            background: #999;
+            border-color: #999;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .exam-button.disabled:hover {
+            background: #999;
+            border-color: #999;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .time-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            color: #856404;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .time-info.available {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .countdown {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #003366;
+            font-weight: bold;
+        }
+
+        .server-time-display {
+            background: #003366;
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .server-time-display .time-label {
+            font-size: 0.85rem;
+            opacity: 0.9;
+            margin-right: 8px;
+        }
+
         /* Password Modal */
         .password-modal {
             display: none;
@@ -432,15 +489,26 @@
     </div>
 
     <?php
-    // Read the JSON data from the file
-    $jsonData = file_get_contents('data2.json');
-    // Convert JSON to PHP array
-    $data = json_decode($jsonData, true);
+    // Read all JSON data files
+    $jsonData1 = file_get_contents('data.json');
+    $jsonData2 = file_get_contents('data1.json');
+    $jsonData3 = file_get_contents('data2.json');
+    
+    // Convert JSON to PHP arrays
+    $data1 = json_decode($jsonData1, true);
+    $data2 = json_decode($jsonData2, true);
+    $data3 = json_decode($jsonData3, true);
+    
+    // Combine all departments from all three files
+    $allDepartments = array_merge(
+        $data1['arts']['value'],
+        $data2['arts']['value'],
+        $data3['arts']['value']
+    );
 
     // Function to get the details for a specific value (department)
-    function getDepartmentDetails($departmentName) {
-        global $data;
-        foreach ($data['arts']['value'] as $item) {
+    function getDepartmentDetails($departmentName, $departments) {
+        foreach ($departments as $item) {
             if ($item['val'] === $departmentName) {
                 return $item;
             }
@@ -453,15 +521,17 @@
     // Check if the department name is provided in the URL
     if (isset($_GET['department'])) {
         $departmentName = urldecode($_GET['department']);
-        $departmentDetails = getDepartmentDetails($departmentName);
+        $departmentDetails = getDepartmentDetails($departmentName, $allDepartments);
         
         if ($departmentDetails) {
             // Display the details for the selected department
+            echo '<div class="server-time-display"><span class="time-label">Current Server Time:</span><span id="currentServerTime"></span></div>';
             echo '<div class="exam-card">';
             echo '<h1>' . htmlspecialchars($departmentDetails['val']) . '</h1>';
             echo '<div class="exam-access">';
             echo '<p>Access Your Exam Through Below Link</p>';
-            echo '<div class="exam-button" onclick="openPasswordModal()">Click Here</div>';
+            echo '<div class="exam-button" id="examButton" onclick="openPasswordModal()">Click Here</div>';
+            echo '<div class="time-info" id="timeInfo"></div>';
             echo '</div>';
             echo '</div>';
         } else {
@@ -479,9 +549,178 @@
     ?>
 
     <script>
+        // Exam time data from PHP
+        <?php if(isset($departmentDetails) && $departmentDetails): ?>
+        var examTimeData = {
+            from: '<?php echo isset($departmentDetails['time']['from']) ? $departmentDetails['time']['from'] : ''; ?>',
+            to: '<?php echo isset($departmentDetails['time']['to']) ? $departmentDetails['time']['to'] : ''; ?>',
+            noon: '<?php echo isset($departmentDetails['time']['noon']) ? $departmentDetails['time']['noon'] : ''; ?>',
+            session: '<?php echo isset($departmentDetails['time']['session']) ? $departmentDetails['time']['session'] : ''; ?>'
+        };
+        var departmentPassword = '<?php echo isset($departmentDetails['psk']) ? $departmentDetails['psk'] : ''; ?>';
+        var examLink = '<?php echo isset($departmentDetails['lcount'][0]) ? $departmentDetails['lcount'][0] : ''; ?>';
+        
+        // Get server time from PHP (in milliseconds since epoch)
+        var serverTime = <?php echo time() * 1000; ?>;
+        var clientTime = new Date().getTime();
+        var timeDifference = serverTime - clientTime; // Difference between server and client
+        
+        // Function to get current server time
+        function getServerTime() {
+            return new Date(new Date().getTime() + timeDifference);
+        }
+        <?php endif; ?>
+
+        // Parse time string (e.g., "2.30" or "10:00") and convert to hours and minutes
+        function parseTime(timeStr) {
+            var parts = timeStr.replace(':', '.').split('.');
+            var hours = parseInt(parts[0]);
+            var minutes = parts.length > 1 ? parseInt(parts[1]) : 0;
+            return { hours: hours, minutes: minutes };
+        }
+
+        // Convert 12-hour format to 24-hour format
+        function convertTo24Hour(hours, minutes, noon) {
+            if (noon === 'pm' && hours !== 12) {
+                hours += 12;
+            } else if (noon === 'am' && hours === 12) {
+                hours = 0;
+            }
+            return { hours: hours, minutes: minutes };
+        }
+
+        // Get time 30 minutes before the exam start
+        function getAccessTime() {
+            var time = parseTime(examTimeData.from);
+            var time24 = convertTo24Hour(time.hours, time.minutes, examTimeData.noon);
+            
+            // Subtract 30 minutes
+            var accessMinutes = time24.minutes - 30;
+            var accessHours = time24.hours;
+            
+            if (accessMinutes < 0) {
+                accessMinutes += 60;
+                accessHours -= 1;
+            }
+            
+            if (accessHours < 0) {
+                accessHours += 24;
+            }
+            
+            return { hours: accessHours, minutes: accessMinutes };
+        }
+
+        // Format time for display
+        function formatTime(hours, minutes, is24Hour = false) {
+            if (is24Hour) {
+                return String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
+            }
+            var displayHours = hours;
+            var period = 'AM';
+            
+            if (hours >= 12) {
+                period = 'PM';
+                if (hours > 12) displayHours = hours - 12;
+            }
+            if (hours === 0) displayHours = 12;
+            
+            return displayHours + ':' + String(minutes).padStart(2, '0') + ' ' + period;
+        }
+
+        // Check if current time is within access window
+        function checkTimeAccess() {
+            var now = getServerTime(); // Use server time instead of client time
+            var currentHours = now.getHours();
+            var currentMinutes = now.getMinutes();
+            var currentSeconds = now.getSeconds();
+            
+            // Update server time display
+            var timeStr = formatTime(currentHours, currentMinutes, false) + ':' + String(currentSeconds).padStart(2, '0');
+            var serverTimeElement = document.getElementById('currentServerTime');
+            if (serverTimeElement) {
+                serverTimeElement.textContent = timeStr;
+            }
+            
+            // Get exam start time in 24-hour format
+            var examTime = parseTime(examTimeData.from);
+            var examTime24 = convertTo24Hour(examTime.hours, examTime.minutes, examTimeData.noon);
+            
+            // Get exam end time in 24-hour format
+            var endTime = parseTime(examTimeData.to);
+            var endTime24 = convertTo24Hour(endTime.hours, endTime.minutes, examTimeData.noon);
+            
+            // Get access time (30 minutes before)
+            var accessTime = getAccessTime();
+            
+            // Convert times to total minutes for easy comparison
+            var currentTotalMinutes = currentHours * 60 + currentMinutes;
+            var accessTotalMinutes = accessTime.hours * 60 + accessTime.minutes;
+            var examEndTotalMinutes = endTime24.hours * 60 + endTime24.minutes;
+            
+            var button = document.getElementById('examButton');
+            var timeInfo = document.getElementById('timeInfo');
+            
+            // Check if current time is within the access window
+            if (currentTotalMinutes >= accessTotalMinutes && currentTotalMinutes < examEndTotalMinutes) {
+                // Access is allowed
+                button.classList.remove('disabled');
+                button.style.pointerEvents = 'auto';
+                timeInfo.className = 'time-info available';
+                timeInfo.innerHTML = '✓ Exam link is now available!<br>Exam Time: ' + 
+                    formatTime(examTime24.hours, examTime24.minutes) + ' - ' + 
+                    formatTime(endTime24.hours, endTime24.minutes);
+                return true;
+            } else if (currentTotalMinutes < accessTotalMinutes) {
+                // Too early - show countdown
+                button.classList.add('disabled');
+                button.style.pointerEvents = 'none';
+                
+                var timeDiff = accessTotalMinutes - currentTotalMinutes;
+                var hoursLeft = Math.floor(timeDiff / 60);
+                var minutesLeft = timeDiff % 60;
+                var secondsLeft = 60 - currentSeconds;
+                
+                if (secondsLeft === 60) secondsLeft = 0;
+                else if (minutesLeft > 0) minutesLeft -= 1;
+                
+                var countdownStr = '';
+                if (hoursLeft > 0) {
+                    countdownStr = hoursLeft + 'h ' + minutesLeft + 'm ' + secondsLeft + 's';
+                } else {
+                    countdownStr = minutesLeft + 'm ' + secondsLeft + 's';
+                }
+                
+                timeInfo.className = 'time-info';
+                timeInfo.innerHTML = 'Link will be available at ' + formatTime(accessTime.hours, accessTime.minutes) + 
+                    '<div class="countdown">Time remaining: ' + countdownStr + '</div>' +
+                    '<div style="margin-top:10px;font-size:0.9rem;">Exam Time: ' + 
+                    formatTime(examTime24.hours, examTime24.minutes) + ' - ' + 
+                    formatTime(endTime24.hours, endTime24.minutes) + '</div>';
+                return false;
+            } else {
+                // Exam time has passed
+                button.classList.add('disabled');
+                button.style.pointerEvents = 'none';
+                timeInfo.className = 'time-info';
+                timeInfo.innerHTML = 'Exam time has ended.<br>Exam was: ' + 
+                    formatTime(examTime24.hours, examTime24.minutes) + ' - ' + 
+                    formatTime(endTime24.hours, endTime24.minutes);
+                return false;
+            }
+        }
+
+        // Initialize and update every second
+        <?php if(isset($departmentDetails) && $departmentDetails): ?>
+        checkTimeAccess();
+        setInterval(checkTimeAccess, 1000);
+        <?php endif; ?>
+
         function openPasswordModal() {
-            document.getElementById("passwordModal").classList.add("active");
-            document.getElementById("passwordInput").focus();
+            // Check if access is allowed before opening modal
+            if (!document.getElementById('examButton').classList.contains('disabled')) {
+                document.getElementById("passwordModal").classList.add("active");
+                document.getElementById("passwordInput").focus();
+            }
         }
 
         function closePasswordModal() {
@@ -491,8 +730,6 @@
 
         function checkPassword() {
             <?php if(isset($departmentDetails) && $departmentDetails): ?>
-            var departmentPassword = '<?php echo isset($departmentDetails['psk']) ? $departmentDetails['psk'] : ''; ?>';
-            var examLink = '<?php echo isset($departmentDetails['lcount'][0]) ? $departmentDetails['lcount'][0] : ''; ?>';
             var enteredPassword = document.getElementById("passwordInput").value;
             
             if(enteredPassword === departmentPassword) {

@@ -111,6 +111,61 @@
             left: 10px;
         }
 
+        .department-link.locked {
+            background: #e0e0e0;
+            color: #666;
+            border-color: #999;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        .session-timing {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            color: #856404;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        .session-timing.available {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+
+        .session-timing .time {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 8px;
+            color: #003366;
+        }
+
+        .session-grid {
+            margin-bottom: 40px;
+        }
+
+        .server-time-display {
+            background: #003366;
+            color: white;
+            padding: 12px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .server-time-display .time-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-right: 10px;
+        }
+
         /* Responsive Design */
         @media (max-width: 1024px) {
             .department-grid {
@@ -340,24 +395,209 @@
 </div>
 <div class="main-wrapper">
     <?php
-    // Read the JSON data from the file
-    $jsonData = file_get_contents('data2.json');
-    // Convert JSON to PHP array
-    $data = json_decode($jsonData, true);
+    // Read all JSON data files
+    $jsonData1 = file_get_contents('data.json');
+    $jsonData2 = file_get_contents('data1.json');
+    $jsonData3 = file_get_contents('data2.json');
     
-
+    // Convert JSON to PHP arrays
+    $data1 = json_decode($jsonData1, true);
+    $data2 = json_decode($jsonData2, true);
+    $data3 = json_decode($jsonData3, true);
+    
+    // Combine all departments from all three files
+    $allDepartments = array_merge(
+        $data1['arts']['value'],
+        $data2['arts']['value'],
+        $data3['arts']['value']
+    );
+    
+    // Function to group departments by session
+    function groupBySession($departments) {
+        $sessions = [];
+        foreach ($departments as $dept) {
+            $sessionNum = $dept['time']['session'];
+            if (!isset($sessions[$sessionNum])) {
+                $sessions[$sessionNum] = [
+                    'time' => $dept['time'],
+                    'departments' => []
+                ];
+            }
+            $sessions[$sessionNum]['departments'][] = $dept;
+        }
+        ksort($sessions);
+        return $sessions;
+    }
+    
+    $sessions = groupBySession($allDepartments);
     
     echo '<div class="department-section">';
-    echo '<h2 class="section-title">' . $data['arts']['name'] . '</h2>';
-    echo '<div class="department-grid">';
+    echo '<h2 class="section-title">Ph.D. Common Entrance Test - December 2025</h2>';
+    echo '<div class="server-time-display"><span class="time-label">Current Server Time:</span><span id="currentServerTime"></span></div>';
     
-    foreach ($data['arts']['value'] as $item) {
-        echo '<a href="arts.php?department=' . rawurlencode($item['val']) . '" class="department-link">' . $item['val'] . '</a>';
+    foreach ($sessions as $sessionNum => $sessionData) {
+        echo '<div class="session-grid" id="session-' . $sessionNum . '">';
+        echo '<div class="session-timing" id="timing-' . $sessionNum . '"></div>';
+        echo '<div class="department-grid" id="grid-' . $sessionNum . '" style="display:none;">';
+        
+        foreach ($sessionData['departments'] as $dept) {
+            echo '<a href="arts.php?department=' . rawurlencode($dept['val']) . '" class="department-link">' . $dept['val'] . '</a>';
+        }
+        
+        echo '</div>';
+        echo '</div>';
     }
     
     echo '</div>';
-    echo '</div>';
     ?>
+    
+    <script>
+        // Session data from PHP
+        var sessionsData = <?php echo json_encode($sessions); ?>;
+        
+        // Get server time from PHP (in milliseconds since epoch)
+        var serverTime = <?php echo time() * 1000; ?>;
+        var clientTime = new Date().getTime();
+        var timeDifference = serverTime - clientTime; // Difference between server and client
+        
+        // Function to get current server time
+        function getServerTime() {
+            return new Date(new Date().getTime() + timeDifference);
+        }
+        
+        // Parse time string (e.g., "2.30" or "10:00") and convert to hours and minutes
+        function parseTime(timeStr) {
+            var parts = timeStr.replace(':', '.').split('.');
+            var hours = parseInt(parts[0]);
+            var minutes = parts.length > 1 ? parseInt(parts[1]) : 0;
+            return { hours: hours, minutes: minutes };
+        }
+
+        // Convert 12-hour format to 24-hour format
+        function convertTo24Hour(hours, minutes, noon) {
+            if (noon === 'pm' && hours !== 12) {
+                hours += 12;
+            } else if (noon === 'am' && hours === 12) {
+                hours = 0;
+            }
+            return { hours: hours, minutes: minutes };
+        }
+
+        // Get time 30 minutes before the exam start
+        function getAccessTime(timeData) {
+            var time = parseTime(timeData.from);
+            var time24 = convertTo24Hour(time.hours, time.minutes, timeData.noon);
+            
+            // Subtract 30 minutes
+            var accessMinutes = time24.minutes - 30;
+            var accessHours = time24.hours;
+            
+            if (accessMinutes < 0) {
+                accessMinutes += 60;
+                accessHours -= 1;
+            }
+            
+            if (accessHours < 0) {
+                accessHours += 24;
+            }
+            
+            return { hours: accessHours, minutes: accessMinutes };
+        }
+
+        // Format time for display
+        function formatTime(hours, minutes) {
+            var displayHours = hours;
+            var period = 'AM';
+            
+            if (hours >= 12) {
+                period = 'PM';
+                if (hours > 12) displayHours = hours - 12;
+            }
+            if (hours === 0) displayHours = 12;
+            
+            return displayHours + ':' + String(minutes).padStart(2, '0') + ' ' + period;
+        }
+
+        // Check session access and update display
+        function updateSessionDisplay() {
+            var now = getServerTime(); // Use server time instead of client time
+            var currentHours = now.getHours();
+            var currentMinutes = now.getMinutes();
+            var currentSeconds = now.getSeconds();
+            var currentTotalMinutes = currentHours * 60 + currentMinutes;
+            
+            // Update server time display
+            var timeStr = formatTime(currentHours, currentMinutes) + ':' + String(currentSeconds).padStart(2, '0');
+            document.getElementById('currentServerTime').textContent = timeStr;
+            
+            for (var sessionNum in sessionsData) {
+                var sessionData = sessionsData[sessionNum];
+                var timeData = sessionData.time;
+                
+                // Get exam times
+                var examTime = parseTime(timeData.from);
+                var examTime24 = convertTo24Hour(examTime.hours, examTime.minutes, timeData.noon);
+                
+                var endTime = parseTime(timeData.to);
+                var endTime24 = convertTo24Hour(endTime.hours, endTime.minutes, timeData.noon);
+                
+                // Get access time (30 minutes before)
+                var accessTime = getAccessTime(timeData);
+                var accessTotalMinutes = accessTime.hours * 60 + accessTime.minutes;
+                var examEndTotalMinutes = endTime24.hours * 60 + endTime24.minutes;
+                
+                var timingDiv = document.getElementById('timing-' + sessionNum);
+                var gridDiv = document.getElementById('grid-' + sessionNum);
+                
+                // Check if current time is within the access window
+                if (currentTotalMinutes >= accessTotalMinutes && currentTotalMinutes < examEndTotalMinutes) {
+                    // Access is allowed - show departments
+                    timingDiv.className = 'session-timing available';
+                    timingDiv.innerHTML = '✓ Session ' + sessionNum + ' is now available!<br>' +
+                        '<span style="font-size:1rem;">Exam Time: ' + 
+                        formatTime(examTime24.hours, examTime24.minutes) + ' - ' + 
+                        formatTime(endTime24.hours, endTime24.minutes) + '</span>';
+                    gridDiv.style.display = 'grid';
+                } else if (currentTotalMinutes < accessTotalMinutes) {
+                    // Too early - show countdown
+                    var timeDiff = accessTotalMinutes - currentTotalMinutes;
+                    var hoursLeft = Math.floor(timeDiff / 60);
+                    var minutesLeft = timeDiff % 60;
+                    var secondsLeft = 60 - currentSeconds;
+                    
+                    if (secondsLeft === 60) secondsLeft = 0;
+                    else if (minutesLeft > 0) minutesLeft -= 1;
+                    
+                    var countdownStr = '';
+                    if (hoursLeft > 0) {
+                        countdownStr = hoursLeft + 'h ' + minutesLeft + 'm ' + secondsLeft + 's';
+                    } else {
+                        countdownStr = minutesLeft + 'm ' + secondsLeft + 's';
+                    }
+                    
+                    timingDiv.className = 'session-timing';
+                    timingDiv.innerHTML = 'Session ' + sessionNum + ' Opens at ' + formatTime(accessTime.hours, accessTime.minutes) +
+                        '<div class="time">Opens in: ' + countdownStr + '</div>' +
+                        '<div style="margin-top:10px;font-size:0.95rem;">Exam Time: ' + 
+                        formatTime(examTime24.hours, examTime24.minutes) + ' - ' + 
+                        formatTime(endTime24.hours, endTime24.minutes) + '</div>';
+                    gridDiv.style.display = 'none';
+                } else {
+                    // Exam time has passed
+                    timingDiv.className = 'session-timing';
+                    timingDiv.innerHTML = 'Session ' + sessionNum + ' has ended<br>' +
+                        '<span style="font-size:0.95rem;">Exam was: ' + 
+                        formatTime(examTime24.hours, examTime24.minutes) + ' - ' + 
+                        formatTime(endTime24.hours, endTime24.minutes) + '</span>';
+                    gridDiv.style.display = 'none';
+                }
+            }
+        }
+
+        // Initialize and update every second
+        updateSessionDisplay();
+        setInterval(updateSessionDisplay, 1000);
+    </script>
 </div>
 </body>
 </html>
