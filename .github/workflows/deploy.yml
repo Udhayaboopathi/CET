@@ -1,4 +1,4 @@
-name: Deploy CET Site
+name: CET Production Deploy
 
 on:
   push:
@@ -7,17 +7,13 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.SERVER_IP }}
-          username: ubuntu
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/cet
-            git pull origin main
-            docker compose down
-            docker compose up -d --build
+      - name: Deploy to VPS
+        run: |
+          cd /var/www/cet/CET
+          git fetch --all
+          git reset --hard origin/main
+          docker compose up -d --build --remove-orphans
+          docker image prune -f
