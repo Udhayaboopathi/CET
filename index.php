@@ -395,6 +395,9 @@
 </div>
 <div class="main-wrapper">
     <?php
+    // Set timezone to Indian Standard Time
+    date_default_timezone_set('Asia/Kolkata');
+    
     // Read all JSON data files
     $jsonData1 = file_get_contents('data.json');
     $jsonData2 = file_get_contents('data1.json');
