@@ -3,17 +3,17 @@ name: CET Production Deploy
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux]
 
     steps:
       - name: Deploy to VPS
         run: |
           cd /var/www/cet/CET
-          git fetch --all
-          git reset --hard origin/main
+          git fetch origin master
+          git reset --hard origin/master
           docker compose up -d --build --remove-orphans
           docker image prune -f
