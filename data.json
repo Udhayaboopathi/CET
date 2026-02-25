@@ -4,10 +4,10 @@
     "email": "phdcetarts@gmail.com",
     "value": [
       {
-        "val": "Mathematics",
+        "val": "Botany",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Mathematics/arts",
-        "psk": "MATH2025",
+        "link": "/exams/Botany/arts",
+        "psk": "BOT2025",
         "time": {
           "from": "10:00",
           "to": "11:30",
@@ -40,18 +40,6 @@
         }
       },
       {
-        "val": "Microbiology",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Microbiology/arts",
-        "psk": "MICRO2025",
-        "time": {
-          "from": "10:00",
-          "to": "11:30",
-          "session": "1",
-          "noon": "am"
-        }
-      },
-      {
         "val": "Journalism and Mass Communication",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
         "link": "/exams/Journalism and Mass Communication/arts",
@@ -64,10 +52,22 @@
         }
       },
       {
-        "val": "Botany",
+        "val": "Mathematics",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Botany/arts",
-        "psk": "BOT2025",
+        "link": "/exams/Mathematics/arts",
+        "psk": "MATH2025",
+        "time": {
+          "from": "10:00",
+          "to": "11:30",
+          "session": "1",
+          "noon": "am"
+        }
+      },
+      {
+        "val": "Microbiology",
+        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "link": "/exams/Microbiology/arts",
+        "psk": "MICRO2025",
         "time": {
           "from": "10:00",
           "to": "11:30",

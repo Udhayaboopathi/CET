@@ -4,22 +4,10 @@
     "email": "phdcetarts@gmail.com",
     "value": [
       {
-        "val": "Physics",
+        "val": "Biotechnology",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Physics/arts",
-        "psk": "PHY2025",
-        "time": {
-          "from": "12:00",
-          "to": "1.30",
-          "session": "2",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Tamil",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Tamil/arts",
-        "psk": "TAM2025",
+        "link": "/exams/Biotech/arts",
+        "psk": "BIO2025",
         "time": {
           "from": "12:00",
           "to": "1.30",
@@ -40,22 +28,10 @@
         }
       },
       {
-        "val": "EVS",
+        "val": "Environmental Science",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
         "link": "/exams/EVS/arts",
         "psk": "EVS2025",
-        "time": {
-          "from": "12:00",
-          "to": "1.30",
-          "session": "2",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "Biotech",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Biotech/arts",
-        "psk": "BIO2025",
         "time": {
           "from": "12:00",
           "to": "1.30",
@@ -76,10 +52,10 @@
         }
       },
       {
-        "val": "Sociology",
+        "val": "History",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Sociology/arts",
-        "psk": "SOC2025",
+        "link": "/exams/History/arts",
+        "psk": "HIS2025",
         "time": {
           "from": "12:00",
           "to": "1.30",
@@ -100,30 +76,6 @@
         }
       },
       {
-        "val": "Zoology",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/Zoology/arts",
-        "psk": "ZOO2025",
-        "time": {
-          "from": "12:00",
-          "to": "1.30",
-          "session": "2",
-          "noon": "pm"
-        }
-      },
-      {
-        "val": "History",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
-        "link": "/exams/History/arts",
-        "psk": "HIS2025",
-        "time": {
-          "from": "12:00",
-          "to": "1.30",
-          "session": "2",
-          "noon": "pm"
-        }
-      },
-      {
         "val": "Management",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
         "link": "/exams/Management/arts",
@@ -136,10 +88,46 @@
         }
       },
       {
-        "val": "Nutrition Dietics",
+        "val": "Nutrition and Dietetics",
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
         "link": "/exams/Nutrition-Dietics/arts",
         "psk": "ND2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Physics",
+        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "link": "/exams/Physics/arts",
+        "psk": "PHY2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Sociology",
+        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "link": "/exams/Sociology/arts",
+        "psk": "SOC2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Tamil",
+        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "link": "/exams/Tamil/arts",
+        "psk": "TAM2025",
         "time": {
           "from": "12:00",
           "to": "1.30",
@@ -152,6 +140,18 @@
         "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
         "link": "/exams/Textile-Apparel/arts",
         "psk": "TA2025",
+        "time": {
+          "from": "12:00",
+          "to": "1.30",
+          "session": "2",
+          "noon": "pm"
+        }
+      },
+      {
+        "val": "Zoology",
+        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "link": "/exams/Zoology/arts",
+        "psk": "ZOO2025",
         "time": {
           "from": "12:00",
           "to": "1.30",
