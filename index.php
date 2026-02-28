@@ -66,6 +66,14 @@
     }
     
     $sessions = groupBySession($allDepartments);
+
+    // Sort department list alphabetically for each session
+    foreach ($sessions as &$session) {
+        usort($session['departments'], function($a, $b) {
+            return strcasecmp($a['val'], $b['val']);
+        });
+    }
+    unset($session);
     
     echo '<div class="department-section">';
     echo '<h2 class="section-title">Ph.D. Common Entrance Test - December 2025</h2>';
