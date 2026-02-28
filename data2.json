@@ -10,12 +10,7 @@
         ],
         "link": "/exams/Chemistry/arts",
         "psk": "CHE2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Computer Science",
@@ -24,26 +19,16 @@
         ],
         "link": "/exams/Computer-Science/arts",
         "psk": "CSE2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Commerce",
         "lcount": [
-          "https://docs.google.com/forms/d/e/1FAIpQLSfw_6osh8TAqqdzkFXnJaCFvoCAj9KRjg-BUsDM1GG2Mdbvaw/viewform?usp=header"
+          "https://docs.google.com/forms/d/e/1FAIpQLScdOhlSr4HHdB838cggKCbzhjY5tmLq0kyz0_YnGdwnJfxNug/viewform?usp=dialog"
         ],
         "link": "/exams/Commerce/arts",
         "psk": "COM2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Political Science",
@@ -52,26 +37,16 @@
         ],
         "link": "/exams/Political-Science/arts",
         "psk": "PSC2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Statistics",
         "lcount": [
-          "https://docs.google.com/forms/d/e/1FAIpQLScIDi8TfS_UHYoQEhwavA7tr_MdRZGK5RZA8jQw0kKNTq_E5g/viewform?usp=header"
+          "https://docs.google.com/forms/d/e/1FAIpQLScYKjoh1F_A3WMijdam1Cjddcyvs_zZXGwT_iCCrsAmJes51w/viewform?usp=dialog"
         ],
         "link": "/exams/Statistics/arts",
         "psk": "STA2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Psychology",
@@ -80,12 +55,7 @@
         ],
         "link": "/exams/Psychology/arts",
         "psk": "PSY2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Education",
@@ -94,12 +64,7 @@
         ],
         "link": "/exams/Education/arts",
         "psk": "EDU2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Energy Science",
@@ -108,12 +73,7 @@
         ],
         "link": "/exams/Energy-Science/arts",
         "psk": "ENS2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Energy Technology",
@@ -122,12 +82,7 @@
         ],
         "link": "/exams/Energy-Technology/arts",
         "psk": "ENT2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       },
       {
         "val": "Biochemistry",
@@ -136,12 +91,7 @@
         ],
         "link": "/exams/Biochemistry/arts",
         "psk": "BIC2025",
-        "time": {
-          "from": "2.30",
-          "to": "4.00",
-          "session": "3",
-          "noon": "pm"
-        }
+        "time": { "from": "2.30", "to": "4.00", "session": "3", "noon": "pm" }
       }
     ]
   }
