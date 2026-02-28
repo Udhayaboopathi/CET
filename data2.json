@@ -5,9 +5,11 @@
     "value": [
       {
         "val": "Chemistry",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSdrcA8XeWzfVwNSeUefsBF9G6SHLg7ngHc_lI-uuDW6Fic5PA/viewform?usp=header"
+        ],
         "link": "/exams/Chemistry/arts",
-        "psk": "CHEM2025",
+        "psk": "CHE2025",
         "time": {
           "from": "2.30",
           "to": "4.00",
@@ -17,9 +19,11 @@
       },
       {
         "val": "Computer Science",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLScL76SACwcUwU9Aqzl6obrFUCuSVkrU9QVfreYCCXyViyr_Zw/viewform?usp=header"
+        ],
         "link": "/exams/Computer-Science/arts",
-        "psk": "CS2025",
+        "psk": "CSE2025",
         "time": {
           "from": "2.30",
           "to": "4.00",
@@ -29,7 +33,9 @@
       },
       {
         "val": "Commerce",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSfw_6osh8TAqqdzkFXnJaCFvoCAj9KRjg-BUsDM1GG2Mdbvaw/viewform?usp=header"
+        ],
         "link": "/exams/Commerce/arts",
         "psk": "COM2025",
         "time": {
@@ -41,9 +47,11 @@
       },
       {
         "val": "Political Science",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSff4A2YvE7IFKdt38aHy6vpM-GIBxOJux5CqvOpeddaeepZ2w/viewform?usp=header"
+        ],
         "link": "/exams/Political-Science/arts",
-        "psk": "POL2025",
+        "psk": "PSC2025",
         "time": {
           "from": "2.30",
           "to": "4.00",
@@ -53,9 +61,11 @@
       },
       {
         "val": "Statistics",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLScIDi8TfS_UHYoQEhwavA7tr_MdRZGK5RZA8jQw0kKNTq_E5g/viewform?usp=header"
+        ],
         "link": "/exams/Statistics/arts",
-        "psk": "STAT2025",
+        "psk": "STA2025",
         "time": {
           "from": "2.30",
           "to": "4.00",
@@ -65,7 +75,9 @@
       },
       {
         "val": "Psychology",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSeQTFIbGmuv9OYkpqnAkfAjqBd8PHx8REBKd3gf_8BzGErHZw/viewform?usp=header"
+        ],
         "link": "/exams/Psychology/arts",
         "psk": "PSY2025",
         "time": {
@@ -77,7 +89,9 @@
       },
       {
         "val": "Education",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSebAw0PpTV9bnLfI8FfSoWmmUYmfkw650p6lBUomV8o1MxTNA/viewform?usp=header"
+        ],
         "link": "/exams/Education/arts",
         "psk": "EDU2025",
         "time": {
@@ -89,7 +103,9 @@
       },
       {
         "val": "Energy Science",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSc1_Chtml1OpuP5sKpeLjvJKD0ggwhegk-EcrsFLsQfd8JntA/viewform?usp=header"
+        ],
         "link": "/exams/Energy-Science/arts",
         "psk": "ENS2025",
         "time": {
@@ -101,7 +117,9 @@
       },
       {
         "val": "Energy Technology",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLScy1R1abA3NageD3b-FOqpiNjyxls6oiky7_I6_4MTHH5zlNg/viewform?usp=header"
+        ],
         "link": "/exams/Energy-Technology/arts",
         "psk": "ENT2025",
         "time": {
@@ -113,9 +131,11 @@
       },
       {
         "val": "Biochemistry",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSfbll4lGKE9rES3ohQYFRhDd2Mapp5HbsSbaJsGrOyaDTPrTA/viewform?usp=header"
+        ],
         "link": "/exams/Biochemistry/arts",
-        "psk": "BIOCHEM2025",
+        "psk": "BIC2025",
         "time": {
           "from": "2.30",
           "to": "4.00",

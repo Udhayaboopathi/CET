@@ -290,7 +290,7 @@
             if(enteredPassword === departmentPassword) {
                 window.location.href = examLink;
             } else {
-                alert("Incorrect password. Please try again.");
+                alert("Your password is wrong. Please contact the hall supervisor.");
                 document.getElementById("passwordInput").value = "";
                 document.getElementById("passwordInput").focus();
             }

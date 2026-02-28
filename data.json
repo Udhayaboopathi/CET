@@ -5,7 +5,9 @@
     "value": [
       {
         "val": "Botany",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSduxVwWdIxiZqkBoc8Wq0xc1hKCXy8ydzxK4ZtahXuD3Ab8Mg/viewform?usp=header"
+        ],
         "link": "/exams/Botany/arts",
         "psk": "BOT2025",
         "time": {
@@ -17,7 +19,9 @@
       },
       {
         "val": "English",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSfw_6osh8TAqqdzkFXnJaCFvoCAj9KRjg-BUsDM1GG2Mdbvaw/viewform?usp=header"
+        ],
         "link": "/exams/English/arts",
         "psk": "ENG2025",
         "time": {
@@ -29,7 +33,9 @@
       },
       {
         "val": "Food Science and Nutrition",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSfSmh2HTMSFkK6LlfYZQFOOnDr6nRdDQGLYgtLbDb0fx_tATg/viewform?usp=header"
+        ],
         "link": "/exams/FSN/arts",
         "psk": "FSN2025",
         "time": {
@@ -41,7 +47,9 @@
       },
       {
         "val": "Journalism and Mass Communication",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSc4WiUAIdMKG7wCYz-mUH3Z1QxFMwI9R6N0W9eIzHjXBddJOQ/viewform?usp=header"
+        ],
         "link": "/exams/Journalism and Mass Communication/arts",
         "psk": "JMC2025",
         "time": {
@@ -53,9 +61,11 @@
       },
       {
         "val": "Mathematics",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLScKK8sDuAiSvC1s51A0sO7OoQLZOLxBS2G8jzMYJ896jO_C1A/viewform?usp=header"
+        ],
         "link": "/exams/Mathematics/arts",
-        "psk": "MATH2025",
+        "psk": "MAT2025",
         "time": {
           "from": "10:00",
           "to": "11:30",
@@ -65,9 +75,11 @@
       },
       {
         "val": "Microbiology",
-        "lcount": ["https://forms.gle/m4oBiGMtA3o1rM1Q7"],
+        "lcount": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSfSp_baH6XViA7o9BZyty4N9z4dpBVempsHTR2FfTg_zLJPlg/viewform?usp=header"
+        ],
         "link": "/exams/Microbiology/arts",
-        "psk": "MICRO2025",
+        "psk": "MIC2025",
         "time": {
           "from": "10:00",
           "to": "11:30",
