@@ -99,14 +99,24 @@
         // Session data from PHP
         var sessionsData = <?php echo json_encode($sessions); ?>;
         
-        // Get server time from PHP (in milliseconds since epoch)
+        // Get server time from PHP in IST (milliseconds since epoch)
         var serverTime = <?php echo time() * 1000; ?>;
         var clientTime = new Date().getTime();
         var timeDifference = serverTime - clientTime; // Difference between server and client
         
-        // Function to get current server time
+        // Function to get current Indian Standard Time (IST)
         function getServerTime() {
-            return new Date(new Date().getTime() + timeDifference);
+            // Get current time adjusted for server
+            var currentTime = new Date(new Date().getTime() + timeDifference);
+            
+            // Convert to IST (UTC+5:30)
+            // Get UTC time in milliseconds
+            var utcTime = currentTime.getTime() + (currentTime.getTimezoneOffset() * 60000);
+            
+            // IST is UTC + 5 hours 30 minutes (19800000 milliseconds)
+            var istTime = new Date(utcTime + (5.5 * 60 * 60 * 1000));
+            
+            return istTime;
         }
         
         // Parse time string (e.g., "2.30" or "10:00") and convert to hours and minutes
