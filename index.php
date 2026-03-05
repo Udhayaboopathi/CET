@@ -14,7 +14,7 @@
     <div class="periyar-research-header1">
         <div class="periyar-research-header2">
             <h3 class="logotexttamil">பெரியார் பல்கலைக்கழகம்</h3>
-            <h2 class="logotexteng">PERIYAR UNIVERSITY Udhayaboopathi</h2>
+            <h2 class="logotexteng">PERIYAR UNIVERSITY</h2>
             <div class="logotext-div">
                 <h5 class="logotext">State University - NAAC 'A++' Grade - NIRF Rank 94</h5>
                 <h5 class="logotext">State Public University Rank 40 - SDG Institutions Rank Band: 11-50</h5>
